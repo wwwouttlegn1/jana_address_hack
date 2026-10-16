@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+python-multipart
+rapidfuzz
+orjson
+pytest
+pytest-cov
+httpx

@@ -59,3 +59,51 @@ export async function parseFile(file: File): Promise<Address[]> {
 
   return response.json() as Promise<Address[]>;
 }
+
+export async function loadRecords(limit = 500): Promise<Address[]> {
+  const response = await fetch(`${API_URL}/records?limit=${limit}`);
+  if (!response.ok) {
+    throw new Error(await readApiError(response));
+  }
+  return response.json() as Promise<Address[]>;
+}
+
+export async function updateRecord(address: Address): Promise<Address> {
+  if (!address.record_id) {
+    throw new Error("У записи отсутствует ID PostgreSQL");
+  }
+  const {
+    province,
+    city,
+    district,
+    living_area,
+    street_type,
+    street_name,
+    house,
+    apartment,
+    entrance,
+    floor,
+    landmark,
+  } = address;
+  const response = await fetch(`${API_URL}/records/${address.record_id}`, {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      province,
+      city,
+      district,
+      living_area,
+      street_type,
+      street_name,
+      house,
+      apartment,
+      entrance,
+      floor,
+      landmark,
+    }),
+  });
+  if (!response.ok) {
+    throw new Error(await readApiError(response));
+  }
+  return response.json() as Promise<Address>;
+}

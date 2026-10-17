@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import uuid
+
 from pydantic import BaseModel, ConfigDict, Field
 
 
@@ -19,6 +21,7 @@ class AddressInput(BaseModel):
 class AddressResult(BaseModel):
     """Flat response contract required by the JANA ADDRESS case."""
 
+    record_id: uuid.UUID | None = None
     id: str
     raw_address: str
     province: str | None = None
@@ -33,6 +36,7 @@ class AddressResult(BaseModel):
     floor: str | None = None
     landmark: str | None = None
     confidence: float = Field(ge=0.0, le=1.0)
+    needs_review: bool = False
 
     model_config = ConfigDict(
         json_schema_extra={
@@ -56,3 +60,19 @@ class AddressResult(BaseModel):
             }
         }
     )
+
+
+class AddressCorrection(BaseModel):
+    province: str | None = None
+    city: str | None = None
+    district: str | None = None
+    living_area: str | None = None
+    street_type: str | None = None
+    street_name: str | None = None
+    house: str | None = None
+    apartment: str | None = None
+    entrance: str | None = None
+    floor: str | None = None
+    landmark: str | None = None
+
+    model_config = ConfigDict(extra="forbid")

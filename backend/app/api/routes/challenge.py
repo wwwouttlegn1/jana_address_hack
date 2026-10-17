@@ -3,15 +3,17 @@ from __future__ import annotations
 import csv
 import io
 import json
+import uuid
 
-from fastapi import APIRouter, Depends, File, HTTPException, UploadFile, status
+from fastapi import APIRouter, Depends, File, HTTPException, Query, UploadFile, status
 from pydantic import TypeAdapter, ValidationError
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.config import get_settings
 from app.parser.challenge import parse_address_safely
 from app.reference.jana_repository import JanaReferenceRepository
-from app.schemas.challenge import AddressInput, AddressResult
+from app.schemas.challenge import AddressCorrection, AddressInput, AddressResult
+from app.services.challenge_record_service import ChallengeRecordService
 from app.storage.database import get_session
 
 
@@ -20,7 +22,7 @@ input_list_adapter = TypeAdapter(list[AddressInput])
 
 
 async def _parse_many(
-    items: list[AddressInput], repository: JanaReferenceRepository
+    items: list[AddressInput], session: AsyncSession
 ) -> list[AddressResult]:
     settings = get_settings()
     if len(items) > settings.max_batch_size:
@@ -29,9 +31,12 @@ async def _parse_many(
             detail=f"Максимум записей в одном запросе: {settings.max_batch_size}",
         )
     results: list[AddressResult] = []
-    for item in items:
+    repository = JanaReferenceRepository(session)
+    records = ChallengeRecordService(session)
+    for sequence, item in enumerate(items):
         parsed = parse_address_safely(item)
-        results.append(await repository.enrich(parsed))
+        enriched = await repository.enrich(parsed)
+        results.append(await records.save(enriched, sequence=sequence))
     return results
 
 
@@ -41,7 +46,7 @@ async def _parse_many(
     summary="Разобрать один адрес",
     description=(
         "Принимает `id` и исходный адрес. Возвращает плоскую структуру из задания "
-        "и уточняет результат по справочнику PostgreSQL."
+        "уточняет результат по справочнику и сохраняет запись в PostgreSQL."
     ),
 )
 async def parse_one(
@@ -49,7 +54,10 @@ async def parse_one(
     session: AsyncSession = Depends(get_session),
 ) -> AddressResult:
     repository = JanaReferenceRepository(session)
-    return await repository.enrich(parse_address_safely(payload))
+    result = await repository.enrich(parse_address_safely(payload))
+    result = await ChallengeRecordService(session).save(result)
+    await session.commit()
+    return result
 
 
 @router.post(
@@ -66,7 +74,9 @@ async def parse_batch(
     payload: list[AddressInput],
     session: AsyncSession = Depends(get_session),
 ) -> list[AddressResult]:
-    return await _parse_many(payload, JanaReferenceRepository(session))
+    results = await _parse_many(payload, session)
+    await session.commit()
+    return results
 
 
 @router.post(
@@ -115,4 +125,36 @@ async def parse_file(
             detail="Каждая запись должна содержать поля id и raw_address",
         ) from exc
 
-    return await _parse_many(items, JanaReferenceRepository(session))
+    results = await _parse_many(items, session)
+    await session.commit()
+    return results
+
+
+@router.get(
+    "/records",
+    response_model=list[AddressResult],
+    summary="Получить сохранённые адреса",
+    description="Возвращает последние результаты обработки из PostgreSQL.",
+)
+async def list_records(
+    limit: int = Query(default=500, ge=1, le=2_000),
+    session: AsyncSession = Depends(get_session),
+) -> list[AddressResult]:
+    return await ChallengeRecordService(session).list_recent(limit=limit)
+
+
+@router.patch(
+    "/records/{record_id}",
+    response_model=AddressResult,
+    summary="Сохранить ручное исправление",
+)
+async def correct_record(
+    record_id: uuid.UUID,
+    correction: AddressCorrection,
+    session: AsyncSession = Depends(get_session),
+) -> AddressResult:
+    result = await ChallengeRecordService(session).correct(record_id, correction)
+    if result is None:
+        raise HTTPException(status_code=404, detail="Сохранённый адрес не найден")
+    await session.commit()
+    return result

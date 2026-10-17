@@ -7,7 +7,7 @@ import FileUpload from "../upload/FileUpload";
 
 interface Props {
   addresses: Address[];
-  onUpdate: (address: Address) => void;
+  onUpdate: (address: Address) => Promise<void> | void;
   onImport: (file: File) => Promise<void> | void;
   busy?: boolean;
 }
@@ -63,8 +63,8 @@ export default function AddressTable({
     URL.revokeObjectURL(url);
   }
 
-  function saveAddress(updated: Address) {
-    onUpdate(updated);
+  async function saveAddress(updated: Address) {
+    await onUpdate(updated);
     setEditing(null);
   }
 
@@ -149,11 +149,11 @@ export default function AddressTable({
 
             <tbody>
               {visible.map((address) => {
-                const needsReview = address.confidence < 0.72;
+                const needsReview = address.needs_review;
 
                 return (
                   <tr
-                    key={address.id}
+                    key={address.record_id ?? address.id}
                     className={`border-t border-slate-100 ${
                       needsReview
                         ? "bg-amber-50/50"

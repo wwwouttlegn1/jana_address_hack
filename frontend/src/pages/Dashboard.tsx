@@ -9,7 +9,7 @@ const cardBase = "rounded-xl border border-slate-200 bg-white p-5 shadow-sm";
 
 export default function Dashboard({ addresses }: DashboardProps) {
   const total = addresses.length;
-  const processed = addresses.filter((address) => address.confidence >= 0.72).length;
+  const processed = addresses.filter((address) => !address.needs_review).length;
   const needsReview = total - processed;
   const avgConfidence = total
     ? Math.round((addresses.reduce((sum, address) => sum + address.confidence, 0) / total) * 100)
@@ -40,8 +40,8 @@ export default function Dashboard({ addresses }: DashboardProps) {
 
   const cards = [
     { title: "Всего адресов", value: total.toLocaleString("ru-RU"), note: "В текущем списке", icon: Database, iconClass: "bg-blue-50 text-blue-600" },
-    { title: "Обработано", value: processed.toLocaleString("ru-RU"), note: "Уверенность от 72%", icon: Check, iconClass: "bg-emerald-50 text-emerald-600" },
-    { title: "На проверке", value: needsReview.toLocaleString("ru-RU"), note: "Ниже 72% или без разбора", icon: AlertTriangle, iconClass: "bg-amber-50 text-amber-600" },
+    { title: "Обработано", value: processed.toLocaleString("ru-RU"), note: "Готово к использованию", icon: Check, iconClass: "bg-emerald-50 text-emerald-600" },
+    { title: "На проверке", value: needsReview.toLocaleString("ru-RU"), note: "Требует уточнения", icon: AlertTriangle, iconClass: "bg-amber-50 text-amber-600" },
     { title: "Ср. уверенность", value: `${avgConfidence}%`, note: "По данным таблицы", icon: Sparkles, iconClass: "bg-violet-50 text-violet-600" },
     { title: "Ошибки полей", value: (missing.city + missing.street + missing.house).toLocaleString("ru-RU"), note: "Город, улица и дом", icon: CircleAlert, iconClass: "bg-rose-50 text-rose-600" },
     { title: "Источник", value: "Локальные данные", note: "Импорт и ручной ввод", icon: Database, iconClass: "bg-slate-100 text-slate-600" },
@@ -115,7 +115,7 @@ export default function Dashboard({ addresses }: DashboardProps) {
         {latest.length ? <div className="overflow-x-auto">
           <table className="w-full min-w-[600px] text-left text-sm">
             <thead className="bg-slate-50 text-xs uppercase text-slate-500"><tr><th className="px-5 py-3">ID</th><th className="px-5 py-3">Исходный адрес</th><th className="px-5 py-3">Уверенность</th><th className="px-5 py-3">Статус</th></tr></thead>
-            <tbody>{latest.map((address) => <tr key={address.id} className="border-t border-slate-100"><td className="px-5 py-3 text-slate-500">{address.id}</td><td className="px-5 py-3 font-medium text-slate-800">{address.raw_address}</td><td className="px-5 py-3">{Math.round(address.confidence * 100)}%</td><td className="px-5 py-3"><span className={`rounded-full px-2.5 py-1 text-xs font-semibold ${address.confidence >= 0.72 ? "bg-emerald-50 text-emerald-700" : "bg-amber-50 text-amber-700"}`}>{address.confidence >= 0.72 ? "Обработан" : "Нужна проверка"}</span></td></tr>)}</tbody>
+            <tbody>{latest.map((address) => <tr key={address.record_id ?? address.id} className="border-t border-slate-100"><td className="px-5 py-3 text-slate-500">{address.id}</td><td className="px-5 py-3 font-medium text-slate-800">{address.raw_address}</td><td className="px-5 py-3">{Math.round(address.confidence * 100)}%</td><td className="px-5 py-3"><span className={`rounded-full px-2.5 py-1 text-xs font-semibold ${!address.needs_review ? "bg-emerald-50 text-emerald-700" : "bg-amber-50 text-amber-700"}`}>{!address.needs_review ? "Обработан" : "Нужна проверка"}</span></td></tr>)}</tbody>
           </table>
         </div> : <p className="p-8 text-center text-sm text-slate-500">Пока нет добавленных адресов.</p>}
       </section>

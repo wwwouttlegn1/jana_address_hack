@@ -5,6 +5,7 @@ export interface AddressInput {
 }
 
 export interface Address extends AddressInput {
+  record_id: string | null;
   province: string | null;
   city: string | null;
   district: string | null;
@@ -17,4 +18,5 @@ export interface Address extends AddressInput {
   floor: string | null;
   landmark: string | null;
   confidence: number;
+  needs_review: boolean;
 }

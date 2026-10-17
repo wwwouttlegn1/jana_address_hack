@@ -11,6 +11,7 @@ from sqlalchemy.ext.asyncio import async_engine_from_config
 from app.config import get_settings
 from app.reference.models import AddressReference  # noqa: F401
 from app.storage.database import Base
+from app.storage.models import AddressRecord, BatchJob  # noqa: F401
 
 
 config = context.config

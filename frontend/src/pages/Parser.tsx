@@ -3,7 +3,7 @@ import { AlertCircle, MapPin } from "lucide-react";
 
 import AddressForm from "../components/address/AddressForm";
 import AddressTable from "../components/address/AddressTable";
-import { parseBatch, parseFile } from "../services/api";
+import { parseBatch, parseFile, updateRecord } from "../services/api";
 import type { Address, AddressInput } from "../types/address";
 
 interface ParserProps {
@@ -15,12 +15,23 @@ export default function Parser({ addresses, setAddresses }: ParserProps) {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  function handleUpdate(updated: Address) {
-    setAddresses((previous) =>
-      previous.map((address) =>
-        address.id === updated.id ? updated : address,
-      ),
-    );
+  async function handleUpdate(updated: Address) {
+    setError(null);
+    try {
+      const saved = await updateRecord(updated);
+      setAddresses((previous) =>
+        previous.map((address) =>
+          address.record_id === saved.record_id ? saved : address,
+        ),
+      );
+    } catch (reason) {
+      const message =
+        reason instanceof Error
+          ? reason.message
+          : "Не удалось сохранить исправления";
+      setError(message);
+      throw reason;
+    }
   }
 
   async function handleFileUpload(file: File) {

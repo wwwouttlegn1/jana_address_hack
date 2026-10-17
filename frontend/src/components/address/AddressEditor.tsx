@@ -1,11 +1,12 @@
 
 import { useState } from "react";
+import type { FormEvent } from "react";
 import { X, Save, Pencil } from "lucide-react";
 import type { Address } from "../../types/address";
 
 interface Props {
   address: Address;
-  onSave: (address: Address) => void;
+  onSave: (address: Address) => Promise<void> | void;
   onClose: () => void;
 }
 
@@ -29,6 +30,19 @@ export default function AddressEditor({
   onClose,
 }: Props) {
   const [draft, setDraft] = useState<Address>({ ...address });
+  const [saving, setSaving] = useState(false);
+
+  async function submit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setSaving(true);
+    try {
+      await onSave(draft);
+    } catch {
+      // Ошибка отображается в родительском компоненте, редактор остаётся открытым.
+    } finally {
+      setSaving(false);
+    }
+  }
 
   function updateField(
     field: (typeof fields)[number][0],
@@ -82,12 +96,7 @@ export default function AddressEditor({
           </p>
         </div>
 
-        <form
-          onSubmit={(event) => {
-            event.preventDefault();
-            onSave(draft);
-          }}
-        >
+        <form onSubmit={submit}>
           <div className="grid gap-4 sm:grid-cols-2">
             {fields.map(([key, label]) => (
               <label key={key} className="block">
@@ -110,16 +119,18 @@ export default function AddressEditor({
             <button
               type="button"
               onClick={onClose}
+              disabled={saving}
               className="rounded-xl border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-600 hover:bg-slate-50"
             >
               Отмена
             </button>
             <button
               type="submit"
-              className="flex items-center gap-2 rounded-xl bg-emerald-600 px-5 py-3 text-sm font-semibold text-white hover:bg-emerald-700"
+              disabled={saving}
+              className="flex items-center gap-2 rounded-xl bg-emerald-600 px-5 py-3 text-sm font-semibold text-white hover:bg-emerald-700 disabled:cursor-not-allowed disabled:opacity-60"
             >
               <Save size={17} />
-              Сохранить изменения
+              {saving ? "Сохраняем…" : "Сохранить изменения"}
             </button>
           </div>
         </form>

@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, Truck } from "lucide-react";
 
 import Header from "../components/layout/Header";
@@ -7,12 +7,44 @@ import type { Page } from "../components/layout/Header";
 import Parser from "../pages/Parser";
 import Dashboard from "../pages/Dashboard";
 import Home from "../pages/Home";
+import { loadRecords } from "../services/api";
 import type { Address } from "../types/address";
 
 export default function App() {
   const [page, setPage] = useState<Page>("home");
   const [mobileOpen, setMobileOpen] = useState(false);
   const [addresses, setAddresses] = useState<Address[]>([]);
+  const [historyLoading, setHistoryLoading] = useState(true);
+  const [historyError, setHistoryError] = useState<string | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    loadRecords()
+      .then((records) => {
+        if (!cancelled) {
+          setAddresses(records);
+        }
+      })
+      .catch((reason) => {
+        if (!cancelled) {
+          setHistoryError(
+            reason instanceof Error
+              ? reason.message
+              : "Не удалось загрузить сохранённые адреса",
+          );
+        }
+      })
+      .finally(() => {
+        if (!cancelled) {
+          setHistoryLoading(false);
+        }
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   const titles: Record<Page, string> = {
     home: "Главная · Адреса доставки",
@@ -56,7 +88,22 @@ export default function App() {
         </header>
 
         <main className="mx-auto max-w-[1500px] p-5 lg:p-9">
-          {page === "home" && <><Home /><Parser addresses={addresses} setAddresses={setAddresses} /></>}
+          {page === "home" && (
+            <>
+              <Home />
+              {historyLoading && (
+                <p className="mb-4 text-sm text-slate-500">
+                  Загружаем сохранённые адреса…
+                </p>
+              )}
+              {historyError && (
+                <p className="mb-4 rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-800">
+                  История пока недоступна: {historyError}
+                </p>
+              )}
+              <Parser addresses={addresses} setAddresses={setAddresses} />
+            </>
+          )}
 
           {page === "dashboard" && <Dashboard addresses={addresses} />}
         </main>

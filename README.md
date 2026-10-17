@@ -70,6 +70,7 @@ cd C:\jana_address
 ```json
 [
   {
+    "record_id": "55ea3f16-3a71-4d10-9d8d-4ed9f3eb85b6",
     "id": "rec_00417",
     "raw_address": "город Алматы/Алматы қаласы, Мкр Аксай 3а, 59, кв 70",
     "province": "Алматы",
@@ -83,10 +84,12 @@ cd C:\jana_address
     "entrance": null,
     "floor": null,
     "landmark": null,
-    "confidence": 0.92
+    "confidence": 0.92,
+    "needs_review": false
   },
   {
     "id": "rec_00418",
+    "record_id": "9aa17bf7-3b58-45a6-ac49-f19db1a2cc6b",
     "raw_address": "66квартал 12дом 69квартира",
     "province": "Атырау облысы",
     "city": "Құлсары",
@@ -99,7 +102,8 @@ cd C:\jana_address
     "entrance": null,
     "floor": null,
     "landmark": null,
-    "confidence": 0.9
+    "confidence": 0.9,
+    "needs_review": false
   }
 ]
 ```
@@ -109,6 +113,8 @@ cd C:\jana_address
 - `POST /api/v1/parse` — разобрать один объект `{id, raw_address}`;
 - `POST /api/v1/parse/batch` — разобрать JSON-массив;
 - `POST /api/v1/parse/file` — загрузить UTF-8 файл `.json` или `.csv`;
+- `GET /api/v1/records` — загрузить сохранённые результаты из PostgreSQL;
+- `PATCH /api/v1/records/{record_id}` — сохранить ручное исправление;
 - `GET /api/v1/health` — проверить backend и PostgreSQL.
 
 CSV должен иметь две колонки:
@@ -118,8 +124,13 @@ id,raw_address
 rec_1,"Ул .Курильская 9 кв 1"
 ```
 
-Frontend может показывать записи с низким `confidence` в таблице ручной
-проверки. Для нераспознанной строки backend возвращает исходные `id`,
+Каждый результат сохраняется в таблицу `address_records`. Поэтому после
+обновления страницы frontend снова загружает историю, а ручные исправления не
+теряются. Поле `record_id` — UUID записи PostgreSQL, а `needs_review` — готовый
+признак для интерфейса.
+
+Frontend показывает записи с `needs_review: true` как требующие уточнения. Для
+нераспознанной строки backend возвращает исходные `id`,
 `raw_address`, `null` в неизвестных полях и низкую уверенность — запись не
 исчезает из результата.
 

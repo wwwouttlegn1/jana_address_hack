@@ -1,5 +1,6 @@
 import io
 import json
+import uuid
 
 import pytest
 
@@ -22,7 +23,9 @@ async def test_single_address_uses_exact_challenge_contract(client) -> None:
     )
 
     assert response.status_code == 200
-    assert response.json() == {
+    payload = response.json()
+    uuid.UUID(payload.pop("record_id"))
+    assert payload == {
         "id": "rec_00417",
         "raw_address": raw_address,
         "province": "Алматы",
@@ -37,6 +40,7 @@ async def test_single_address_uses_exact_challenge_contract(client) -> None:
         "floor": None,
         "landmark": None,
         "confidence": 0.87,
+        "needs_review": False,
     }
 
 
@@ -59,6 +63,7 @@ async def test_batch_preserves_count_order_and_uncertain_record(client) -> None:
     assert payload[0]["apartment"] == "69"
     assert payload[1]["street_name"] is None
     assert payload[1]["confidence"] == 0.05
+    assert payload[1]["needs_review"] is True
     assert payload[2]["street_name"] == "Назарбаева"
     assert payload[2]["house"] == "8"
     assert payload[2]["apartment"] == "191"
@@ -82,6 +87,34 @@ async def test_json_file_upload(client) -> None:
 
 
 @pytest.mark.asyncio
+async def test_saved_records_can_be_loaded_and_corrected(client) -> None:
+    created = (
+        await client.post(
+            "/api/v1/parse",
+            json={"id": "saved-1", "raw_address": "Назарбаева8 flat 191"},
+        )
+    ).json()
+
+    records_response = await client.get("/api/v1/records")
+    assert records_response.status_code == 200
+    assert records_response.json()[0]["record_id"] == created["record_id"]
+
+    correction_response = await client.patch(
+        f"/api/v1/records/{created['record_id']}",
+        json={"city": "Алматы", "district": "Медеу ауданы"},
+    )
+    assert correction_response.status_code == 200
+    corrected = correction_response.json()
+    assert corrected["city"] == "Алматы"
+    assert corrected["district"] == "Медеу ауданы"
+    assert corrected["needs_review"] is False
+
+    reloaded = (await client.get("/api/v1/records")).json()[0]
+    assert reloaded["city"] == "Алматы"
+    assert reloaded["district"] == "Медеу ауданы"
+
+
+@pytest.mark.asyncio
 async def test_swagger_contains_only_clear_public_pipeline(client) -> None:
     schema = (await client.get("/openapi.json")).json()
 
@@ -89,6 +122,8 @@ async def test_swagger_contains_only_clear_public_pipeline(client) -> None:
         "/api/v1/parse",
         "/api/v1/parse/batch",
         "/api/v1/parse/file",
+        "/api/v1/records",
+        "/api/v1/records/{record_id}",
         "/api/v1/health",
     }
     assert "основной метод для жюри" in schema["paths"]["/api/v1/parse/batch"][

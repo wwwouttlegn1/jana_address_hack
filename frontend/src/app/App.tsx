@@ -7,15 +7,15 @@ import type { Page } from "../components/layout/Header";
 import Parser from "../pages/Parser";
 import Dashboard from "../pages/Dashboard";
 import Home from "../pages/Home";
-import Delivery from "../pages/Delivery";
+import type { Address } from "../types/address";
 
 export default function App() {
   const [page, setPage] = useState<Page>("home");
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [addresses, setAddresses] = useState<Address[]>([]);
 
   const titles: Record<Page, string> = {
-    home: "Главная",
-    parser: "Адреса доставки",
+    home: "Главная · Адреса доставки",
     dashboard: "Справочник и аналитика",
   };
 
@@ -56,11 +56,9 @@ export default function App() {
         </header>
 
         <main className="mx-auto max-w-[1500px] p-5 lg:p-9">
-          {page === "home" && <Delivery />}
+          {page === "home" && <><Home /><Parser addresses={addresses} setAddresses={setAddresses} /></>}
 
-          {page === "parser" && <Parser />}
-
-          {page === "dashboard" && <Dashboard />}
+          {page === "dashboard" && <Dashboard addresses={addresses} />}
         </main>
       </div>
     </div>

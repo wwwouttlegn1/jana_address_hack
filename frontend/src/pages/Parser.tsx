@@ -1,39 +1,16 @@
 
-import { useState } from "react";
-import {
-  MapPin,
-  CheckCircle2,
-  AlertTriangle,
-  BarChart3,
-} from "lucide-react";
+import { MapPin } from "lucide-react";
 
-import StatCard from "../components/address/StatCard";
+import AddressForm from "../components/address/AddressForm";
 import AddressTable from "../components/address/AddressTable";
 import type { Address, AddressInput } from "../types/address";
 
+interface ParserProps {
+  addresses: Address[];
+  setAddresses: (updater: (previous: Address[]) => Address[]) => void;
+}
 
-
-export default function Parser() {
-  const [addresses, setAddresses] = useState<Address[]>([]);
-
-  const successful = addresses.filter(
-    (address) => address.confidence >= 0.85
-  ).length;
-
-  const needsReview = addresses.filter(
-    (address) => address.confidence < 0.85
-  ).length;
-
-  const averageConfidence = addresses.length
-    ? Math.round(
-        (addresses.reduce(
-          (sum, address) => sum + address.confidence,
-          0
-        ) /
-          addresses.length) *
-          100
-      )
-    : 0;
+export default function Parser({ addresses, setAddresses }: ParserProps) {
 
   function handleUpdate(updated: Address) {
     setAddresses((previous) =>
@@ -62,6 +39,13 @@ export default function Parser() {
     setAddresses((previous) => [...previous, ...rows]);
   }
 
+  function handleManualAdd(rawAddresses: string[]) {
+    handleFileUpload(rawAddresses.map((raw_address, index) => ({
+      id: `rec_${Date.now()}_${index + 1}_${Math.random().toString(36).slice(2, 6)}`,
+      raw_address,
+    })));
+  }
+
   return (
     <div>
       <div className="mb-7">
@@ -80,35 +64,8 @@ export default function Parser() {
   </p>
 </div>
 
-      <div className="mb-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <StatCard
-          title="Результатов разбора"
-          value={addresses.length}
-          icon={MapPin}
-          color="bg-emerald-100 text-blue-600"
-        />
-        <StatCard
-          title="Высокая уверенность"
-          value={successful}
-          icon={CheckCircle2}
-          color="bg-emerald-100 text-emerald-600"
-        />
-        <StatCard
-          title="Требуют проверки"
-          value={needsReview}
-          icon={AlertTriangle}
-          color="bg-amber-100 text-amber-600"
-        />
-        <StatCard
-          title="Средний confidence"
-          value={`${averageConfidence}%`}
-          icon={BarChart3}
-          color="bg-violet-100 text-violet-600"
-        />
-      </div>
-
-      <div className="mb-3 text-xs text-slate-400">
-        Ниже представлены демонстрационные результаты для проверки интерфейса.
+      <div className="mb-7 max-w-2xl">
+        <AddressForm onParse={handleManualAdd} />
       </div>
 
       <AddressTable

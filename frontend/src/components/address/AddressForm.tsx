@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { MapPin, Search } from "lucide-react";
+import { MapPin, Plus } from "lucide-react";
 
 interface AddressFormProps {
   onParse: (addresses: string[]) => void;
@@ -26,12 +26,12 @@ export default function AddressForm({ onParse }: AddressFormProps) {
       <div className="mb-4 flex items-center gap-2">
         <MapPin className="text-blue-600" size={22} />
         <h2 className="text-lg font-bold text-slate-900">
-          Ввод адреса
+          Добавить адрес вручную
         </h2>
       </div>
 
       <p className="mb-3 text-sm text-slate-500">
-        Введите один или несколько адресов, каждый с новой строки
+        Введите один или несколько адресов, каждый с новой строки. Они появятся в таблице.
       </p>
 
       <textarea
@@ -48,8 +48,8 @@ export default function AddressForm({ onParse }: AddressFormProps) {
         disabled={!input.trim()}
         className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-600 px-5 py-3 font-semibold text-white transition hover:bg-emerald-700 disabled:cursor-not-allowed disabled:opacity-50"
       >
-        <Search size={18} />
-        Разобрать адреса
+        <Plus size={18} />
+        Добавить в таблицу
       </button>
     </section>
   );

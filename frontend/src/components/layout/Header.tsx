@@ -1,13 +1,12 @@
 
 import {
   LayoutDashboard,
-  MapPin,
   BookOpen,
   Truck,
   X,
 } from "lucide-react";
 
-export type Page = "home" | "parser" | "dashboard";
+export type Page = "home" | "dashboard";
 
 interface HeaderProps {
   currentPage: Page;
@@ -21,11 +20,6 @@ const navigation = [
     id: "home" as const,
     label: "Главная",
     icon: LayoutDashboard,
-  },
-  {
-    id: "parser" as const,
-    label: "Адреса доставки",
-    icon: MapPin,
   },
   {
     id: "dashboard" as const,

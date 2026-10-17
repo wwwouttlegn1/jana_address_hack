@@ -1,0 +1,311 @@
+province,name,name_ru,name_kk,osm_relation_id,observed_objects,relation_match,source
+Абай облысы,Абай ауданы,,,,112,ambiguous_or_missing,OpenStreetMap
+Абай облысы,Абайский район,,,,2,ambiguous_or_missing,OpenStreetMap
+Абай облысы,Аягөз ауданы,Аягозский район,Аягөз ауданы,3395766,658,osm_relation_name,OpenStreetMap
+Абай облысы,Ақсуат ауданы,Аксуатский район,Ақсуат ауданы,14243025,276,osm_relation_name,OpenStreetMap
+Абай облысы,Бесқарағай ауданы,Бескарагайский район,Бесқарағай ауданы,3395767,264,osm_relation_name,OpenStreetMap
+Абай облысы,Бородулиха ауданы,Бородулихинский район,Бородулиха ауданы,3395768,397,osm_relation_name,OpenStreetMap
+Абай облысы,Жарма ауданы,Жарминский район,Жарма ауданы,3395770,614,osm_relation_name,OpenStreetMap
+Абай облысы,Жарминский район,,,,1,ambiguous_or_missing,OpenStreetMap
+Абай облысы,Жаңасемей ауданы,Жанасемейский район,Жаңасемей ауданы,3389552,504,osm_relation_name,OpenStreetMap
+Абай облысы,Курчатов қалалық әкімдігі,,,,3,ambiguous_or_missing,OpenStreetMap
+Абай облысы,Курчатов қалалық әкімшілігі,Городская администрация Курчатов,Курчатов қалалық әкімшілігі,5499667,66,osm_relation_name,OpenStreetMap
+Абай облысы,Көкпекті ауданы,Кокпектинский район,Көкпекті ауданы,3395773,203,osm_relation_name,OpenStreetMap
+Абай облысы,Мақаншы ауданы,Маканчинский район,Мақаншы ауданы,17351661,264,osm_relation_name,OpenStreetMap
+Абай облысы,Самарский район,,,,1,ambiguous_or_missing,OpenStreetMap
+Абай облысы,Семей,Семей Г.А.,Семей қалалық әкімшілігі,17351528,1912,osm_relation_name,OpenStreetMap
+Абай облысы,Семей Қ.Ә.,,,,34,ambiguous_or_missing,OpenStreetMap
+Абай облысы,Үржар ауданы,Урджарский район,Үржар ауданы,3395777,429,osm_relation_name,OpenStreetMap
+Алматы,Іле ауданы,Илийский район,Іле ауданы,5518195,2,osm_relation_name,OpenStreetMap
+Алматы,Алатау ауданы,Алатауский район,,3072216,1820,osm_relation_name,OpenStreetMap
+Алматы,Алмалы ауданы,Алмалинский район,Алмалы ауданы,3072807,957,osm_relation_name,OpenStreetMap
+Алматы,Бостандыкский район,,,,10,ambiguous_or_missing,OpenStreetMap
+Алматы,Бостандық ауданы,Бостандыкский район,Бостандық ауданы,3390291,1685,osm_relation_name,OpenStreetMap
+Алматы,Достық,,,,78,ambiguous_or_missing,OpenStreetMap
+Алматы,Ерменсай,,,,3,ambiguous_or_missing,OpenStreetMap
+Алматы,Жетісу ауданы,Жетысуский район,,3072130,981,osm_relation_name,OpenStreetMap
+Алматы,Калкаман-2,,,,4,ambiguous_or_missing,OpenStreetMap
+Алматы,Карасу,,,,15,ambiguous_or_missing,OpenStreetMap
+Алматы,Кемел,,,,41,ambiguous_or_missing,OpenStreetMap
+Алматы,Медеу ауданы,Медеуский район,Медеу ауданы,3072217,1789,osm_relation_name,OpenStreetMap
+Алматы,Медеуский,,,,27,ambiguous_or_missing,OpenStreetMap
+Алматы,Наурызбай ауданы,Наурызбайский район,,5460063,958,osm_relation_name,OpenStreetMap
+Алматы,Наурызбайский район,,,,2,ambiguous_or_missing,OpenStreetMap
+Алматы,Тастыбулак,,,,17,ambiguous_or_missing,OpenStreetMap
+Алматы,Таугүл-3,,,,4,ambiguous_or_missing,OpenStreetMap
+Алматы,Таусамал,,,,1,ambiguous_or_missing,OpenStreetMap
+Алматы,Түрксіб Ауданы,Турксибский район,Түрксіб ауданы,3072001,1315,osm_relation_name,OpenStreetMap
+Алматы,Шугыла,,,,7,ambiguous_or_missing,OpenStreetMap
+Алматы,микрорайон Тулпар,,,,1,ambiguous_or_missing,OpenStreetMap
+Алматы,Әуезов ауданы,Ауэзовский район,,3072808,768,osm_relation_name,OpenStreetMap
+Алматы облысы,Іле ауданы,Илийский район,Іле ауданы,5518195,1295,osm_relation_name,OpenStreetMap
+Алматы облысы,Алатау,Алатау,Алатау,17012094,417,osm_relation_name,OpenStreetMap
+Алматы облысы,Балқаш ауданы,Балхашский район,Балқаш ауданы,5517810,239,osm_relation_name,OpenStreetMap
+Алматы облысы,Енбекшиказахский район,,,,3,ambiguous_or_missing,OpenStreetMap
+Алматы облысы,Еңбекшіқазақ ауданы,Енбекшиказахский район,Еңбекшіқазақ ауданы,5518093,1850,osm_relation_name,OpenStreetMap
+Алматы облысы,Жамбыл ауданы,,,,1030,ambiguous_or_missing,OpenStreetMap
+Алматы облысы,Кеген ауданы,Кегенский район,Кеген ауданы,9159398,233,osm_relation_name,OpenStreetMap
+Алматы облысы,Конаев Қ.Ә.,,,,12,ambiguous_or_missing,OpenStreetMap
+Алматы облысы,Райымбек ауданы,Райымбекский район,Райымбек ауданы,5517935,390,osm_relation_name,OpenStreetMap
+Алматы облысы,Талғар ауданы,Талгарский район,Талғар ауданы,5503599,2077,osm_relation_name,OpenStreetMap
+Алматы облысы,Қарасай ауданы,Карасайский район,Қарасай ауданы,5518210,2448,osm_relation_name,OpenStreetMap
+Алматы облысы,Қонаев,Конаев,Қонаев,5518065,481,osm_relation_name,OpenStreetMap
+Алматы облысы,Ұйғыр ауданы,Уйгурский район,Ұйғыр ауданы,5517948,392,osm_relation_name,OpenStreetMap
+Астана,Алматы ауданы,район Алматы,,3482819,700,osm_relation_name,OpenStreetMap
+Астана,Байқоңыр ауданы,район Байконур,Байқоңыр ауданы,8593081,752,osm_relation_name,OpenStreetMap
+Астана,Есіл ауданы,,,,1339,ambiguous_or_missing,OpenStreetMap
+Астана,Нұра ауданы,,,,825,ambiguous_or_missing,OpenStreetMap
+Астана,Сарайшық ауданы,район Сарайшык,Сарайшық ауданы,19733918,690,osm_relation_name,OpenStreetMap
+Астана,Сарыарқа ауданы,район Сарыарка,Сарыарқа ауданы,3486954,871,osm_relation_name,OpenStreetMap
+Атырау облысы,Атырау Қ.Ә.,,,,31,ambiguous_or_missing,OpenStreetMap
+Атырау облысы,Атырау қалалық әкімдігі,городская администрация Атырау,Атырау қалалық әкімдігі,3389541,2984,osm_relation_name,OpenStreetMap
+Атырау облысы,Жылыой ауданы,Жылыойский район,Жылыой ауданы,214840,879,osm_relation_name,OpenStreetMap
+Атырау облысы,Индер ауданы,Индерский район,Индер ауданы,214835,454,osm_relation_name,OpenStreetMap
+Атырау облысы,Исатай ауданы,Исатайский район,Исатай ауданы,214836,168,osm_relation_name,OpenStreetMap
+Атырау облысы,Курмангазинский район,,,,1,ambiguous_or_missing,OpenStreetMap
+Атырау облысы,Махамбет ауданы,Махамбетский район,Махамбет ауданы,214839,449,osm_relation_name,OpenStreetMap
+Атырау облысы,Мақат ауданы,Макатский район,Мақат ауданы,214838,109,osm_relation_name,OpenStreetMap
+Атырау облысы,Қызылқоға ауданы,Кызылкогинский район,Қызылқоға ауданы,214837,208,osm_relation_name,OpenStreetMap
+Атырау облысы,Құрманғазы ауданы,Курмангазинский район,Құрманғазы ауданы,214670,613,osm_relation_name,OpenStreetMap
+Ақмола облысы,Аршалы ауданы,Аршалынский район,Аршалы ауданы,3403782,270,osm_relation_name,OpenStreetMap
+Ақмола облысы,Астрахан ауданы,Астраханский район,Астрахан ауданы,3403694,211,osm_relation_name,OpenStreetMap
+Ақмола облысы,Атбасар ауданы,Атбасарский район,Атбасар ауданы,3403602,335,osm_relation_name,OpenStreetMap
+Ақмола облысы,Ақкөл ауданы,Аккольский район,Ақкөл ауданы,3403437,213,osm_relation_name,OpenStreetMap
+Ақмола облысы,Бурабай ауданы,Бурабайский район,Бурабай ауданы,3403942,776,osm_relation_name,OpenStreetMap
+Ақмола облысы,Біржан сал ауданы,район Биржан сал,Біржан сал ауданы,3403915,135,osm_relation_name,OpenStreetMap
+Ақмола облысы,Бұланды ауданы,Буландынский район,Бұланды ауданы,3403954,316,osm_relation_name,OpenStreetMap
+Ақмола облысы,Егіндікөл ауданы,Егиндыкольский район,Егіндікөл ауданы,3403723,59,osm_relation_name,OpenStreetMap
+Ақмола облысы,Ерейментау ауданы,Ерейментауский район,Ерейментау ауданы,3403895,376,osm_relation_name,OpenStreetMap
+Ақмола облысы,Ерейментауский район,,,,3,ambiguous_or_missing,OpenStreetMap
+Ақмола облысы,Есіл ауданы,,,,133,ambiguous_or_missing,OpenStreetMap
+Ақмола облысы,Жарқайың ауданы,Жаркаинский район,Жарқайың ауданы,3403636,94,osm_relation_name,OpenStreetMap
+Ақмола облысы,Жақсы ауданы,Жаксынский район,Жақсы ауданы,3403595,137,osm_relation_name,OpenStreetMap
+Ақмола облысы,Зеренді ауданы,Зерендинский район,Зеренді ауданы,3403444,287,osm_relation_name,OpenStreetMap
+Ақмола облысы,Көкшетау Қ.Ә.,Кокшетау Г.А.,Көкшетау Қ.Ә.,3388744,1005,osm_relation_name,OpenStreetMap
+Ақмола облысы,Сандықтау ауданы,Сандыктауский район,Сандықтау ауданы,3403962,139,osm_relation_name,OpenStreetMap
+Ақмола облысы,Степногорск Қ.Ә.,,,,18,ambiguous_or_missing,OpenStreetMap
+Ақмола облысы,Степногорск қаласының әкімшілігі,городская администрация Степногорск,Степногорск қаласының әкімшілігі,3404209,255,osm_relation_name,OpenStreetMap
+Ақмола облысы,Целиноград ауданы,Целиноградский район,Целиноград ауданы,3403760,589,osm_relation_name,OpenStreetMap
+Ақмола облысы,Шортанды ауданы,Шортандинский район,Шортанды ауданы,3404061,204,osm_relation_name,OpenStreetMap
+Ақмола облысы,район Біржан сал,,,,1,ambiguous_or_missing,OpenStreetMap
+Ақмола облысы,Қорғалжын ауданы,Коргалжынский район,Қорғалжын ауданы,3403743,75,osm_relation_name,OpenStreetMap
+Ақмола облысы,Қосшы қалалық әкімдігі,городская администрация Косшы,Қосшы қалалық әкімдігі,15594335,197,osm_relation_name,OpenStreetMap
+Ақтөбе облысы,Алға ауданы,Алгинский район,Алға ауданы,215684,395,osm_relation_name,OpenStreetMap
+Ақтөбе облысы,Ақтөбе Қ.Ә.,Актобе Г.А.,Ақтөбе Қ.Ә.,14210662,2083,osm_relation_name,OpenStreetMap
+Ақтөбе облысы,Байғанин ауданы,Байганинский район,Байғанин ауданы,3397451,196,osm_relation_name,OpenStreetMap
+Ақтөбе облысы,Каргалинский район,,,,2,ambiguous_or_missing,OpenStreetMap
+Ақтөбе облысы,Мартөк ауданы,Мартукский район,Мартөк ауданы,3397454,197,osm_relation_name,OpenStreetMap
+Ақтөбе облысы,Мұғалжар ауданы,Мугалжарский район,Мұғалжар ауданы,3397455,430,osm_relation_name,OpenStreetMap
+Ақтөбе облысы,Ойыл ауданы,Ойылский район,Ойыл ауданы,3397457,70,osm_relation_name,OpenStreetMap
+Ақтөбе облысы,Темір ауданы,Темирский район,Темір ауданы,3397456,154,osm_relation_name,OpenStreetMap
+Ақтөбе облысы,Хромтау ауданы,Хромтауский район,Хромтау ауданы,3397459,277,osm_relation_name,OpenStreetMap
+Ақтөбе облысы,Шалқар ауданы,Шалкарский район,Шалқар ауданы,3397460,310,osm_relation_name,OpenStreetMap
+Ақтөбе облысы,Ырғыз ауданы,Иргизский район,Ырғыз ауданы,3397452,78,osm_relation_name,OpenStreetMap
+Ақтөбе облысы,Қарғалы ауданы,Каргалинский район,Қарғалы ауданы,3397453,70,osm_relation_name,OpenStreetMap
+Ақтөбе облысы,Қобда ауданы,Хобдинский район,Қобда ауданы,3397458,160,osm_relation_name,OpenStreetMap
+Ақтөбе облысы,Әйтеке би ауданы,Айтекебийский район,Әйтеке би ауданы,3397450,109,osm_relation_name,OpenStreetMap
+Батыс Қазақстан облысы,Ақжайық ауданы,Акжаикский район,Ақжайық ауданы,215641,359,osm_relation_name,OpenStreetMap
+Батыс Қазақстан облысы,Бәйтерек ауданы,Байтерекский район,Бәйтерек ауданы,215499,360,osm_relation_name,OpenStreetMap
+Батыс Қазақстан облысы,Бөкей ордасы ауданы,Бокейординский район,Бөкей ордасы ауданы,215663,252,osm_relation_name,OpenStreetMap
+Батыс Қазақстан облысы,Бөрлі ауданы,Бурлинский район,Бөрлі ауданы,215477,417,osm_relation_name,OpenStreetMap
+Батыс Қазақстан облысы,Жаңақала ауданы,Жангалинский район,Жаңақала ауданы,215456,312,osm_relation_name,OpenStreetMap
+Батыс Қазақстан облысы,Жәнібек ауданы,Жанибекский район,Жәнібек ауданы,214669,260,osm_relation_name,OpenStreetMap
+Батыс Қазақстан облысы,Зеленовский район,,,,1,ambiguous_or_missing,OpenStreetMap
+Батыс Қазақстан облысы,Казталов ауданы,Казталовский район,Казталов ауданы,215636,453,osm_relation_name,OpenStreetMap
+Батыс Қазақстан облысы,Орал Г.А.,,,,2,ambiguous_or_missing,OpenStreetMap
+Батыс Қазақстан облысы,Орал Қ.Ә.,,,,28,ambiguous_or_missing,OpenStreetMap
+Батыс Қазақстан облысы,Орал қалалық әкімдігі,городская администрация Уральск,Орал қалалық әкімдігі,3767383,2243,osm_relation_name,OpenStreetMap
+Батыс Қазақстан облысы,Сырым ауданы,Сырымский район,Сырым ауданы,215659,163,osm_relation_name,OpenStreetMap
+Батыс Қазақстан облысы,Тасқала ауданы,Таскалинский район,Тасқала ауданы,215490,188,osm_relation_name,OpenStreetMap
+Батыс Қазақстан облысы,Теректі ауданы,Теректинский район,Теректі ауданы,215503,288,osm_relation_name,OpenStreetMap
+Батыс Қазақстан облысы,Шыңғырлау ауданы,Чингирлауский район,Шыңғырлау ауданы,215635,140,osm_relation_name,OpenStreetMap
+Батыс Қазақстан облысы,Қаратөбе ауданы,Каратобинский район,Қаратөбе ауданы,215661,105,osm_relation_name,OpenStreetMap
+Жамбыл облысы,Байзакский район,,,,1,ambiguous_or_missing,OpenStreetMap
+Жамбыл облысы,Байзақ ауданы,Байзакский район,Байзақ ауданы,3388760,387,osm_relation_name,OpenStreetMap
+Жамбыл облысы,Жамбыл ауданы,,,,259,ambiguous_or_missing,OpenStreetMap
+Жамбыл облысы,Жуалы ауданы,Жуалынский район,Жуалы ауданы,3388762,184,osm_relation_name,OpenStreetMap
+Жамбыл облысы,Кордайский район,,,,2,ambiguous_or_missing,OpenStreetMap
+Жамбыл облысы,Меркі ауданы,Меркенский район,Меркі ауданы,3388694,517,osm_relation_name,OpenStreetMap
+Жамбыл облысы,Мойынкумский район,,,,3,ambiguous_or_missing,OpenStreetMap
+Жамбыл облысы,Мойынқұм ауданы,Мойынкумский район,Мойынқұм ауданы,3388414,150,osm_relation_name,OpenStreetMap
+Жамбыл облысы,Сарысу ауданы,Сарысуский район,Сарысу ауданы,3388218,107,osm_relation_name,OpenStreetMap
+Жамбыл облысы,Талас ауданы,Таласский район,Талас ауданы,3388823,217,osm_relation_name,OpenStreetMap
+Жамбыл облысы,Таласский район,,,,2,ambiguous_or_missing,OpenStreetMap
+Жамбыл облысы,Тараз Қ.Ә.,,,,7,ambiguous_or_missing,OpenStreetMap
+Жамбыл облысы,Тараз қаласының әкімшілігі,Тараз городская администрация,Тараз қаласының әкімшілігі,3388834,2447,osm_relation_name,OpenStreetMap
+Жамбыл облысы,Тұрар Рысқұлов ауданы,район Турара Рыскулова,Тұрар Рысқұлов ауданы,3388702,292,osm_relation_name,OpenStreetMap
+Жамбыл облысы,Шу ауданы,Шуский район,Шу ауданы,3388481,582,osm_relation_name,OpenStreetMap
+Жамбыл облысы,Шуский район,,,,1,ambiguous_or_missing,OpenStreetMap
+Жамбыл облысы,район Турара Рыскулова,,,,3,ambiguous_or_missing,OpenStreetMap
+Жамбыл облысы,Қордай ауданы,Кордайский район,Қордай ауданы,3388660,748,osm_relation_name,OpenStreetMap
+Жетісу облысы,Алакөл ауданы,Алакольский район,Алакөл ауданы,5517853,563,osm_relation_name,OpenStreetMap
+Жетісу облысы,Ақсу ауданы,Аксуский район,Ақсу ауданы,5517907,379,osm_relation_name,OpenStreetMap
+Жетісу облысы,Ескелді ауданы,Ескельдинский район,Ескелді ауданы,5518138,478,osm_relation_name,OpenStreetMap
+Жетісу облысы,Капчагай Г.А.,,,,1,ambiguous_or_missing,OpenStreetMap
+Жетісу облысы,Кербұлақ ауданы,Кербулакский район,Кербұлақ ауданы,5518039,599,osm_relation_name,OpenStreetMap
+Жетісу облысы,Коксуский район,,,,3,ambiguous_or_missing,OpenStreetMap
+Жетісу облысы,Көксу ауданы,Коксуский район,Көксу ауданы,5518011,291,osm_relation_name,OpenStreetMap
+Жетісу облысы,Панфилов ауданы,Панфиловский район,Панфилов ауданы,5517959,831,osm_relation_name,OpenStreetMap
+Жетісу облысы,Панфиловский район,,,,2,ambiguous_or_missing,OpenStreetMap
+Жетісу облысы,Сарқан ауданы,Сарканский район,Сарқан ауданы,5517903,626,osm_relation_name,OpenStreetMap
+Жетісу облысы,Талдықорған қалалық әкімдігі,Талдыкорган городская администрация,Талдықорған қалалық әкімдігі,3392135,1189,osm_relation_name,OpenStreetMap
+Жетісу облысы,Текелі Қ.Ә.,Текели Г.А.,Текелі Қ.Ә.,5518135,197,osm_relation_name,OpenStreetMap
+Жетісу облысы,Қаратал ауданы,Каратальский район,Қаратал ауданы,5517817,565,osm_relation_name,OpenStreetMap
+Маңғыстау облысы,<различные>,,,,13,ambiguous_or_missing,OpenStreetMap
+Маңғыстау облысы,Ақтау Қ.Ә.,,,,1,ambiguous_or_missing,OpenStreetMap
+Маңғыстау облысы,Ақтау қалалық әкімдігі,городская администрация Актау,Ақтау қалалық әкімдігі,5515125,483,osm_relation_name,OpenStreetMap
+Маңғыстау облысы,Бейнеу ауданы,Бейнеуский район,Бейнеу ауданы,222946,342,osm_relation_name,OpenStreetMap
+Маңғыстау облысы,Жанаозен Г.А.,,,,1,ambiguous_or_missing,OpenStreetMap
+Маңғыстау облысы,Жаңаөзен қалалық әкімдігі,городская администрация Жанаозен,Жаңаөзен қалалық әкімдігі,5515236,411,osm_relation_name,OpenStreetMap
+Маңғыстау облысы,Мангистауский район,,,,4,ambiguous_or_missing,OpenStreetMap
+Маңғыстау облысы,Маңғыстау ауданы,Мангистауский район,Маңғыстау ауданы,222948,290,osm_relation_name,OpenStreetMap
+Маңғыстау облысы,Мұнайлы ауданы,Мунайлинский район,Мұнайлы ауданы,222957,568,osm_relation_name,OpenStreetMap
+Маңғыстау облысы,Түпқараған ауданы,Тупкараганский район,Түпқараған ауданы,222955,270,osm_relation_name,OpenStreetMap
+Маңғыстау облысы,Қарақия ауданы,Каракиянский район,Қарақия ауданы,222960,228,osm_relation_name,OpenStreetMap
+Павлодар облысы,Аксу Г.А.,,,,12,ambiguous_or_missing,OpenStreetMap
+Павлодар облысы,Ақсу қалалық әкімдігі,городская администрация Аксу,Ақсу қалалық әкімдігі,5501718,667,osm_relation_name,OpenStreetMap
+Павлодар облысы,Ақтоғай ауданы,,,,112,ambiguous_or_missing,OpenStreetMap
+Павлодар облысы,Аққулы ауданы,Аккулинский район,Аққулы ауданы,5500667,330,osm_relation_name,OpenStreetMap
+Павлодар облысы,Баянауыл ауданы,Баянаульский район,Баянауыл ауданы,5499988,433,osm_relation_name,OpenStreetMap
+Павлодар облысы,Екібастұз қалалық әкімдігі,Экибастуз городская администрация,Екібастұз қалалық әкімдігі,5502043,804,osm_relation_name,OpenStreetMap
+Павлодар облысы,Ертіс ауданы,Иртышский район,Ертіс ауданы,5500411,384,osm_relation_name,OpenStreetMap
+Павлодар облысы,Железин ауданы,Железинский район,Железин ауданы,5500371,442,osm_relation_name,OpenStreetMap
+Павлодар облысы,Качирский район,,,,1,ambiguous_or_missing,OpenStreetMap
+Павлодар облысы,Май ауданы,Майский район,Май ауданы,5501685,291,osm_relation_name,OpenStreetMap
+Павлодар облысы,Павлодар ауданы,Павлодарский район,Павлодар ауданы,5501694,460,osm_relation_name,OpenStreetMap
+Павлодар облысы,Павлодар Қ.Ә.,Павлодар Г.А.,Павлодар Қ.Ә.,5501700,1598,osm_relation_name,OpenStreetMap
+Павлодар облысы,СО ИП Идрисова 3,,,,14,ambiguous_or_missing,OpenStreetMap
+Павлодар облысы,СО ИП Идрисова 4,,,,17,ambiguous_or_missing,OpenStreetMap
+Павлодар облысы,Тереңкөл ауданы,Теренкольский район,Тереңкөл ауданы,5500613,400,osm_relation_name,OpenStreetMap
+Павлодар облысы,Успен ауданы,Успенский район,Успен ауданы,5502020,384,osm_relation_name,OpenStreetMap
+Павлодар облысы,Шарбақты ауданы,Щербактинский район,Шарбақты ауданы,5502032,388,osm_relation_name,OpenStreetMap
+Солтүстік Қазақстан облысы,Айыртау ауданы,Айыртауский район,Айыртау ауданы,2830445,281,osm_relation_name,OpenStreetMap
+Солтүстік Қазақстан облысы,Айыртауский район,,,,2,ambiguous_or_missing,OpenStreetMap
+Солтүстік Қазақстан облысы,Акжарский район,,,,3,ambiguous_or_missing,OpenStreetMap
+Солтүстік Қазақстан облысы,Аккайынский район,,,,2,ambiguous_or_missing,OpenStreetMap
+Солтүстік Қазақстан облысы,Ақжар ауданы,Акжарский район,Ақжар ауданы,2830446,124,osm_relation_name,OpenStreetMap
+Солтүстік Қазақстан облысы,Аққайың ауданы,Аккайынский район,Аққайың ауданы,2830447,161,osm_relation_name,OpenStreetMap
+Солтүстік Қазақстан облысы,Есіл ауданы,,,,210,ambiguous_or_missing,OpenStreetMap
+Солтүстік Қазақстан облысы,Жамбыл ауданы,,,,124,ambiguous_or_missing,OpenStreetMap
+Солтүстік Қазақстан облысы,Мамлют ауданы,Мамлютский район,Мамлют ауданы,2830451,151,osm_relation_name,OpenStreetMap
+Солтүстік Қазақстан облысы,Мағжан Жұмабаев ауданы,район Магжана Жумабаева,Мағжан Жұмабаев ауданы,2830455,188,osm_relation_name,OpenStreetMap
+Солтүстік Қазақстан облысы,Орман,,,,1,ambiguous_or_missing,OpenStreetMap
+Солтүстік Қазақстан облысы,Петропавл Қ.Ә.,,,,10,ambiguous_or_missing,OpenStreetMap
+Солтүстік Қазақстан облысы,Петропавл қалалық әкімшілігі,Петропавловская городская администрация,Петропавл қалалық әкімшілігі,2313542,1703,osm_relation_name,OpenStreetMap
+Солтүстік Қазақстан облысы,Тайынша ауданы,Тайыншинский район,Тайынша ауданы,2830452,344,osm_relation_name,OpenStreetMap
+Солтүстік Қазақстан облысы,Тайыншинский район,,,,2,ambiguous_or_missing,OpenStreetMap
+Солтүстік Қазақстан облысы,Тимирязев ауданы,Тимирязевский район,Тимирязев ауданы,2830453,112,osm_relation_name,OpenStreetMap
+Солтүстік Қазақстан облысы,Уәлиханов ауданы,Уалихановский район,Уәлиханов ауданы,2830454,136,osm_relation_name,OpenStreetMap
+Солтүстік Қазақстан облысы,Шал ақын ауданы,район Шал акына,Шал ақын ауданы,2830456,153,osm_relation_name,OpenStreetMap
+Солтүстік Қазақстан облысы,Ғабит Мүсірепов ауданы,район имени Габита Мусрепова,Ғабит Мүсірепов ауданы,2830457,260,osm_relation_name,OpenStreetMap
+Солтүстік Қазақстан облысы,Қызылжар ауданы,Кызылжарский район,Қызылжар ауданы,2830450,402,osm_relation_name,OpenStreetMap
+Түркістан облысы,Арыс қалалық әкімдігі,Арысь городская администрация,Арыс қалалық әкімдігі,3407442,448,osm_relation_name,OpenStreetMap
+Түркістан облысы,Бәйдібек ауданы,район Байдибека,Бәйдібек ауданы,3407558,189,osm_relation_name,OpenStreetMap
+Түркістан облысы,Еңбекші ауданы,Енбекшинский район,Еңбекші ауданы,5551117,2,osm_relation_name,OpenStreetMap
+Түркістан облысы,Жетысайский район,,,,1,ambiguous_or_missing,OpenStreetMap
+Түркістан облысы,Жетісай ауданы,Жетисайский район,Жетісай ауданы,8768984,1179,osm_relation_name,OpenStreetMap
+Түркістан облысы,Келес ауданы,Келесский район,Келес ауданы,9210172,440,osm_relation_name,OpenStreetMap
+Түркістан облысы,Кентау Қ.Ә.,,,,56,ambiguous_or_missing,OpenStreetMap
+Түркістан облысы,Кентау қаласының әкімшілігі,городская администрация Кентау,Кентау қаласының әкімшілігі,17322798,824,osm_relation_name,OpenStreetMap
+Түркістан облысы,Мақтаарал ауданы,Мактааральский район,Мақтаарал ауданы,3407205,811,osm_relation_name,OpenStreetMap
+Түркістан облысы,Ордабасы ауданы,Ордабасынский район,Ордабасы ауданы,3407634,1019,osm_relation_name,OpenStreetMap
+Түркістан облысы,Отырар ауданы,Отрарский район,Отырар ауданы,3407147,220,osm_relation_name,OpenStreetMap
+Түркістан облысы,Отырарский район,,,,2,ambiguous_or_missing,OpenStreetMap
+Түркістан облысы,Сайрам ауданы,Сайрамский район,Сайрам ауданы,5496738,986,osm_relation_name,OpenStreetMap
+Түркістан облысы,Сайрамский район,,,,63,ambiguous_or_missing,OpenStreetMap
+Түркістан облысы,Сарыағаш ауданы,Сарыагашский район,Сарыағаш ауданы,5497131,1177,osm_relation_name,OpenStreetMap
+Түркістан облысы,Сауран ауданы,Сауранский район,Сауран ауданы,3407078,308,osm_relation_name,OpenStreetMap
+Түркістан облысы,Созақ ауданы,Сузакский район,Созақ ауданы,3407031,281,osm_relation_name,OpenStreetMap
+Түркістан облысы,Түлкібас ауданы,Тюлькубасский район,Түлкібас ауданы,5498009,417,osm_relation_name,OpenStreetMap
+Түркістан облысы,Түркістан Қ.Ә.,Туркестан Г.А.,Түркістан Қ.Ә.,5496366,1702,osm_relation_name,OpenStreetMap
+Түркістан облысы,Төле би ауданы,Толебийский район,Төле би ауданы,5498152,415,osm_relation_name,OpenStreetMap
+Түркістан облысы,Шардара ауданы,Шардаринский район,Шардара ауданы,3407327,475,osm_relation_name,OpenStreetMap
+Түркістан облысы,Қазығұрт ауданы,Казыгуртский район,Қазығұрт ауданы,5496171,384,osm_relation_name,OpenStreetMap
+Түркістан облысы,Қаратау ауданы,Каратауский район,Қаратау ауданы,5551119,2,osm_relation_name,OpenStreetMap
+Шымкент,Абай ауданы,,,,1326,ambiguous_or_missing,OpenStreetMap
+Шымкент,Абайский район,,,,13,ambiguous_or_missing,OpenStreetMap
+Шымкент,Аль-Фарабийский район,,,,1,ambiguous_or_missing,OpenStreetMap
+Шымкент,Енбекшинский район,,,,10,ambiguous_or_missing,OpenStreetMap
+Шымкент,Еңбекші ауданы,Енбекшинский район,Еңбекші ауданы,5551117,723,osm_relation_name,OpenStreetMap
+Шымкент,Каратауский район,,,,8,ambiguous_or_missing,OpenStreetMap
+Шымкент,Тұран ауданы,район Туран,Тұран ауданы,21588024,904,osm_relation_name,OpenStreetMap
+Шымкент,Қаратау ауданы,Каратауский район,Қаратау ауданы,5551119,661,osm_relation_name,OpenStreetMap
+Шымкент,Әл-Фараби ауданы,Аль-Фарабийский район,Әл-Фараби ауданы,5550509,738,osm_relation_name,OpenStreetMap
+Шығыс Қазақстан облысы,Алтай ауданы,Алтайский район,Алтай ауданы,3395771,614,osm_relation_name,OpenStreetMap
+Шығыс Қазақстан облысы,Бородулихинский район,,,,2,ambiguous_or_missing,OpenStreetMap
+Шығыс Қазақстан облысы,Глубоковский район,,,,3,ambiguous_or_missing,OpenStreetMap
+Шығыс Қазақстан облысы,Глубокое ауданы,Глубоковский район,Глубокое ауданы,3395769,806,osm_relation_name,OpenStreetMap
+Шығыс Қазақстан облысы,Городская администрация Риддера,,,,4,ambiguous_or_missing,OpenStreetMap
+Шығыс Қазақстан облысы,Зайсан ауданы,Зайсанский район,Зайсан ауданы,3383468,302,osm_relation_name,OpenStreetMap
+Шығыс Қазақстан облысы,Катонқарағай ауданы,Катон-Карагайский район,Катонқарағай ауданы,3395772,211,osm_relation_name,OpenStreetMap
+Шығыс Қазақстан облысы,Күршім ауданы,Курчумский район,Күршім ауданы,3395774,256,osm_relation_name,OpenStreetMap
+Шығыс Қазақстан облысы,Марқакөл ауданы,Маркакольский район,Марқакөл ауданы,17351861,150,osm_relation_name,OpenStreetMap
+Шығыс Қазақстан облысы,Риддер қалалық әкімдігі,Городская администрация Риддера,Риддер қалалық әкімдігі,3389550,511,osm_relation_name,OpenStreetMap
+Шығыс Қазақстан облысы,Самар ауданы,Самарский район,,14243024,164,osm_relation_name,OpenStreetMap
+Шығыс Қазақстан облысы,Тарбағатай ауданы,Тарбагатайский район,Тарбағатай ауданы,3395775,142,osm_relation_name,OpenStreetMap
+Шығыс Қазақстан облысы,Уланский район,,,,6,ambiguous_or_missing,OpenStreetMap
+Шығыс Қазақстан облысы,Усть-Каменогорск Г.А.,,,,21,ambiguous_or_missing,OpenStreetMap
+Шығыс Қазақстан облысы,Шемонаиха ауданы,Шемонаихинский район,Шемонаиха ауданы,3395778,1047,osm_relation_name,OpenStreetMap
+Шығыс Қазақстан облысы,Үлкен Нарын ауданы,Улькен Нарынский район,Үлкен Нарын ауданы,17351846,110,osm_relation_name,OpenStreetMap
+Шығыс Қазақстан облысы,Ұлан ауданы,Уланский район,Ұлан ауданы,3395776,578,osm_relation_name,OpenStreetMap
+Шығыс Қазақстан облысы,Өскемен Қ.Ә.,Усть-Каменогорск Г.А.,Өскемен Қ.Ә.,3389569,1847,osm_relation_name,OpenStreetMap
+Қарағанды облысы,Абай ауданы,,,,410,ambiguous_or_missing,OpenStreetMap
+Қарағанды облысы,Абайский район,,,,2,ambiguous_or_missing,OpenStreetMap
+Қарағанды облысы,Ақтоғай ауданы,,,,240,ambiguous_or_missing,OpenStreetMap
+Қарағанды облысы,Балқаш,,,,1,ambiguous_or_missing,OpenStreetMap
+Қарағанды облысы,Балқаш Қ.Ә.,Балхаш Г.А.,Балқаш Қ.Ә.,5513067,287,osm_relation_name,OpenStreetMap
+Қарағанды облысы,Бухар-Жырауский район,,,,1,ambiguous_or_missing,OpenStreetMap
+Қарағанды облысы,Бұқар жырау ауданы,Бухар-Жырауский район,Бұқар жырау ауданы,5511265,640,osm_relation_name,OpenStreetMap
+Қарағанды облысы,Жанааркинский район,,,,1,ambiguous_or_missing,OpenStreetMap
+Қарағанды облысы,Каркаралинский район,,,,4,ambiguous_or_missing,OpenStreetMap
+Қарағанды облысы,Нуринский район,,,,1,ambiguous_or_missing,OpenStreetMap
+Қарағанды облысы,Нұра ауданы,,,,298,ambiguous_or_missing,OpenStreetMap
+Қарағанды облысы,Осакаров ауданы,Осакаровский район,Осакаров ауданы,5511722,337,osm_relation_name,OpenStreetMap
+Қарағанды облысы,Осакаровский район,,,,4,ambiguous_or_missing,OpenStreetMap
+Қарағанды облысы,Приозерск Қ.Ә.,Приозёрск Г.А.,Приозерск Қ.Ә.,2456975,65,osm_relation_name,OpenStreetMap
+Қарағанды облысы,Приозёрск Г.А.,,,,1,ambiguous_or_missing,OpenStreetMap
+Қарағанды облысы,Саран Қ.Ә.,,,,5,ambiguous_or_missing,OpenStreetMap
+Қарағанды облысы,Саран қаласының әкімшілігі,Сарань городская администрация,Саран қаласының әкімшілігі,5511047,255,osm_relation_name,OpenStreetMap
+Қарағанды облысы,Теміртау Қ.Ә.,Темиртау Г.А.,Теміртау Қ.Ә.,5511190,493,osm_relation_name,OpenStreetMap
+Қарағанды облысы,Шахтинск қалалық әкімдігі,городская администрация Шахтинск,Шахтинск қалалық әкімдігі,5511125,413,osm_relation_name,OpenStreetMap
+Қарағанды облысы,Шет ауданы,Шетский район,Шет ауданы,5512909,385,osm_relation_name,OpenStreetMap
+Қарағанды облысы,Шетский район,,,,1,ambiguous_or_missing,OpenStreetMap
+Қарағанды облысы,Қарағанды Қ.Ә.,Карагандинская городская администрация,Қарағанды Қ.Ә.,3386005,1825,osm_relation_name,OpenStreetMap
+Қарағанды облысы,Қарқаралы ауданы,Каркаралинский район,Қарқаралы ауданы,5513406,400,osm_relation_name,OpenStreetMap
+Қостанай облысы,Алтынсарин ауданы,Алтынсаринский район,Алтынсарин ауданы,2068177,100,osm_relation_name,OpenStreetMap
+Қостанай облысы,Амангелді ауданы,Амангельдинский район,Амангелді ауданы,2068895,144,osm_relation_name,OpenStreetMap
+Қостанай облысы,Арқалық Қ.Ә.,Аркалык Г.А.,Арқалық Қ.Ә.,2068931,224,osm_relation_name,OpenStreetMap
+Қостанай облысы,Бейімбет Майлин ауданы,Район Беимбета Майлина,Бейімбет Майлин ауданы,2067676,208,osm_relation_name,OpenStreetMap
+Қостанай облысы,Денисов ауданы,Денисовский район,Денисов ауданы,2067672,143,osm_relation_name,OpenStreetMap
+Қостанай облысы,Жангелдин ауданы,Жангелдинский район,Жангелдин ауданы,2067946,164,osm_relation_name,OpenStreetMap
+Қостанай облысы,Жітіқара ауданы,Житикаринский район,Жітіқара ауданы,2067328,333,osm_relation_name,OpenStreetMap
+Қостанай облысы,Лисаковск Қ.Ә.,Лисаковск,Лисаковск Қ.Ә.,2914970,161,osm_relation_name,OpenStreetMap
+Қостанай облысы,Меңдіқара ауданы,Мендыкаринский район,Меңдіқара ауданы,2067675,162,osm_relation_name,OpenStreetMap
+Қостанай облысы,Науырзым ауданы,Наурзумский район,Науырзым ауданы,2068896,95,osm_relation_name,OpenStreetMap
+Қостанай облысы,Рудный Г.А.,,,,12,ambiguous_or_missing,OpenStreetMap
+Қостанай облысы,Рудный Қ.Ә.,Рудный Г.А.,Рудный Қ.Ә.,2068946,594,osm_relation_name,OpenStreetMap
+Қостанай облысы,Сарыкөл ауданы,Сарыкольский район,Сарыкөл ауданы,2067816,105,osm_relation_name,OpenStreetMap
+Қостанай облысы,Федоров ауданы,Фёдоровский район,Федоров ауданы,2067683,176,osm_relation_name,OpenStreetMap
+Қостанай облысы,Қамысты ауданы,Камыстинский район,Қамысты ауданы,2067673,111,osm_relation_name,OpenStreetMap
+Қостанай облысы,Қарабалық ауданы,Карабалыкский район,Қарабалық ауданы,2067674,221,osm_relation_name,OpenStreetMap
+Қостанай облысы,Қарасу ауданы,Карасуский район,Қарасу ауданы,2067884,158,osm_relation_name,OpenStreetMap
+Қостанай облысы,Қостанай ауданы,Костанайский район,Қостанай ауданы,2068229,516,osm_relation_name,OpenStreetMap
+Қостанай облысы,Қостанай Қ.Ә.,Костанайская Г.А.,Қостанай Қ.Ә.,3338024,1117,osm_relation_name,OpenStreetMap
+Қостанай облысы,Ұзынкөл ауданы,Узункольский район,Ұзынкөл ауданы,2067682,121,osm_relation_name,OpenStreetMap
+Қостанай облысы,Әулиекөл ауданы,Аулиекольский район,Әулиекөл ауданы,2068838,349,osm_relation_name,OpenStreetMap
+Қызылорда облысы,Арал ауданы,Аральский район,Арал ауданы,5508563,692,osm_relation_name,OpenStreetMap
+Қызылорда облысы,Байконыр Г.А.,,,,1,ambiguous_or_missing,OpenStreetMap
+Қызылорда облысы,Байқоңыр Қ.Ә.,Байконыр Г.А.,Байқоңыр Қ.Ә.,5295657,208,osm_relation_name,OpenStreetMap
+Қызылорда облысы,Жалағаш ауданы,Жалагашский район,Жалағаш ауданы,5509144,238,osm_relation_name,OpenStreetMap
+Қызылорда облысы,Жаңақорған ауданы,Жанакорганский район,Жаңақорған ауданы,5509261,647,osm_relation_name,OpenStreetMap
+Қызылорда облысы,Сырдария ауданы,Сырдарьинский район,Сырдария ауданы,5509954,246,osm_relation_name,OpenStreetMap
+Қызылорда облысы,Шиелинский район,,,,2,ambiguous_or_missing,OpenStreetMap
+Қызылорда облысы,Шиелі ауданы,Шиелийский район,Шиелі ауданы,5510861,547,osm_relation_name,OpenStreetMap
+Қызылорда облысы,Қазалы ауданы,Казалинский район,Қазалы ауданы,5509366,526,osm_relation_name,OpenStreetMap
+Қызылорда облысы,Қармақшы ауданы,Кармакшинский район,Қармақшы ауданы,5509420,339,osm_relation_name,OpenStreetMap
+Қызылорда облысы,Қызылорда Қ.Ә.,Кызылординская городская администрация,Қызылорда қалалық әкімдігі,3396852,1737,osm_relation_name,OpenStreetMap
+Ұлытау облысы,Жаңаарқа ауданы,Жанааркинский район,Жаңаарқа ауданы,5511917,177,osm_relation_name,OpenStreetMap
+Ұлытау облысы,Жезқазған Қ.Ә.,Жезказган Г.А.,Жезқазған Қ.Ә.,5513216,434,osm_relation_name,OpenStreetMap
+Ұлытау облысы,Сәтбаев Қ.Ә.,Сатпаев Г.А.,Сәтбаев Қ.Ә.,5513234,175,osm_relation_name,OpenStreetMap
+Ұлытау облысы,Қаражал Қ.Ә.,городская администрация Каражал,Қаражал Қ.Ә.,5512171,90,osm_relation_name,OpenStreetMap
+Ұлытау облысы,Ұлытау ауданы,Улытауский район,Ұлытау ауданы,5513311,111,osm_relation_name,OpenStreetMap

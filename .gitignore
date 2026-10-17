@@ -6,9 +6,12 @@ venv/
 __pycache__/
 *.pyc
 .pytest_cache/
+.coverage
+htmlcov/
 node_modules/
 dist/
 .vite/
+*.tsbuildinfo
 *.sqlite
 *.sqlite3
 data/train.json

@@ -1,0 +1,145 @@
+{
+  "source_file": "kazakhstan-261016.osm.pbf",
+  "source_bytes": 224531980,
+  "osm_date_from_filename": "2026-10-16",
+  "processing": {
+    "count": {
+      "places": 15017,
+      "streets": 95511,
+      "living_areas": 8960,
+      "aliases": 80955,
+      "admin_areas": 1152,
+      "regions": 20,
+      "districts": 310,
+      "settlements": 8351
+    },
+    "admin_geometry_status": {
+      "incomplete_or_open": 312,
+      "valid_polygon": 1172
+    },
+    "location_methods": {
+      "admin_polygon_only": 87105,
+      "explicit_osm_tag": 16474,
+      "republican_city_admin4": 14208,
+      "polygon_and_settlement_name": 1701
+    },
+    "rows_with_verified_city": {
+      "places": 463,
+      "streets": 30949,
+      "living_areas": 971
+    },
+    "dense_nodes_scanned": 34272758,
+    "settlement_node_candidates": 8304,
+    "geometry_nodes_requested": 435699,
+    "geometry_nodes_found": 435699,
+    "filtered_out_border_or_unlinked": {
+      "streets": 2120,
+      "aliases": 3352,
+      "places": 1717,
+      "living_areas": 874,
+      "admin_areas": 332
+    },
+    "admin4_verified_regions": [
+      "Абай облысы",
+      "Алматы",
+      "Алматы облысы",
+      "Астана",
+      "Атырау облысы",
+      "Ақмола облысы",
+      "Ақтөбе облысы",
+      "Батыс Қазақстан облысы",
+      "Жамбыл облысы",
+      "Жетісу облысы",
+      "Маңғыстау облысы",
+      "Павлодар облысы",
+      "Солтүстік Қазақстан облысы",
+      "Түркістан облысы",
+      "Шымкент",
+      "Шығыс Қазақстан облысы",
+      "Қарағанды облысы",
+      "Қостанай облысы",
+      "Қызылорда облысы",
+      "Ұлытау облысы"
+    ],
+    "settlements_deduplication": "name+province+district+place_type, preferring OSM place nodes",
+    "regional_filter": "Only level-4 polygon-matched OSM provinces and 3 cities of republican significance."
+  },
+  "limitations": [
+    "Not a complete KATO dataset; no official KATO IDs.",
+    "Admin polygon may be missing for incomplete OSM boundaries; city remains blank unless explicitly tagged or a valid polygon name matches nearest settlement node.",
+    "nearest_settlement is advisory only; do not silently treat it as verified city.",
+    "OSM way features may be repeated per street; join identical names only within verified place and provenance.",
+    "OSM PBF extract may include small border-area geometry; validate against Kazakhstan-specific boundaries before claiming national exhaustive accuracy.",
+    "Coordinates from way midpoint node, not exact feature geometry centroid.",
+    "Original OSM attribution and ODbL license must be retained.",
+    "Excluded OSM objects without a matching Kazakhstan level-4 administrative polygon; this favors precision over recall near border/geometry gaps.",
+    "City field for 3 cities of republican significance comes from verified admin-level-4 polygon containment.",
+    "Settlement place name deduplication can merge true homonyms inside the same district; retain places.csv for raw per-OSM identities.",
+    "Districts are derived from administrative names observed on geolocated OSM features; parent region is not a KATO-official code.",
+    "The region source is OSM administrative polygons, not the official KATO classifier.",
+    "Excluded OSM objects without a matching Kazakhstan level-4 administrative polygon; this favors precision over recall near border/geometry gaps.",
+    "City field for 3 cities of republican significance comes from verified admin-level-4 polygon containment.",
+    "Settlement place name deduplication can merge true homonyms inside the same district; retain places.csv for raw per-OSM identities.",
+    "Districts are derived from administrative names observed on geolocated OSM features; parent region is not a KATO-official code.",
+    "The region source is OSM administrative polygons, not the official KATO classifier."
+  ],
+  "raw_extraction": {
+    "count": {
+      "streets": 97631,
+      "aliases": 84307,
+      "places": 16734,
+      "living_areas": 9834,
+      "admin_areas": 1484
+    },
+    "admin_geometry_status": {
+      "incomplete_or_open": 312,
+      "valid_polygon": 1172
+    },
+    "location_methods": {
+      "admin_polygon_only": 87105,
+      "explicit_osm_tag": 16474,
+      "republican_city_admin4": 14208,
+      "polygon_and_settlement_name": 1701
+    },
+    "rows_with_verified_city": {
+      "places": 463,
+      "streets": 30949,
+      "living_areas": 971
+    },
+    "dense_nodes_scanned": 34272758,
+    "settlement_node_candidates": 8304,
+    "geometry_nodes_requested": 435699,
+    "geometry_nodes_found": 435699,
+    "filtered_out_border_or_unlinked": {
+      "places": 1717,
+      "streets": 2120,
+      "living_areas": 874,
+      "aliases": 3352,
+      "admin_areas": 332
+    },
+    "admin4_verified_regions": [
+      "Абай облысы",
+      "Алматы",
+      "Алматы облысы",
+      "Астана",
+      "Атырау облысы",
+      "Ақмола облысы",
+      "Ақтөбе облысы",
+      "Батыс Қазақстан облысы",
+      "Жамбыл облысы",
+      "Жетісу облысы",
+      "Маңғыстау облысы",
+      "Павлодар облысы",
+      "Солтүстік Қазақстан облысы",
+      "Түркістан облысы",
+      "Шымкент",
+      "Шығыс Қазақстан облысы",
+      "Қарағанды облысы",
+      "Қостанай облысы",
+      "Қызылорда облысы",
+      "Ұлытау облысы"
+    ],
+    "settlements_deduplication": "name+province+district+place_type, preferring OSM place nodes",
+    "regional_filter": "Only level-4 polygon-matched OSM provinces and 3 cities of republican significance."
+  }
+}

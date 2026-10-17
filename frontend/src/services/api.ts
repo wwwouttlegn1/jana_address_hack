@@ -3,7 +3,7 @@ import type { Address, AddressInput } from "../types/address";
 
 const API_URL = "/api";
 
-// Разбор одного адреса
+
 export async function parseAddress(
   address: AddressInput
 ): Promise<Address> {

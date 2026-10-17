@@ -7,17 +7,14 @@ import {
   BarChart3,
 } from "lucide-react";
 
-import AddressForm from "../components/address/AddressForm";
-import FileUpload from "../components/upload/FileUpload";
 import StatCard from "../components/address/StatCard";
 import AddressTable from "../components/address/AddressTable";
-import type { Address } from "../types/address";
+import type { Address, AddressInput } from "../types/address";
 
 
 
 export default function Parser() {
   const [addresses, setAddresses] = useState<Address[]>([]);
-  const [pending, setPending] = useState<string[]>([]);
 
   const successful = addresses.filter(
     (address) => address.confidence >= 0.85
@@ -38,10 +35,6 @@ export default function Parser() {
       )
     : 0;
 
-  function handleInput(newAddresses: string[]) {
-    setPending((previous) => [...previous, ...newAddresses]);
-  }
-
   function handleUpdate(updated: Address) {
     setAddresses((previous) =>
       previous.map((address) =>
@@ -50,51 +43,49 @@ export default function Parser() {
     );
   }
 
+  function handleFileUpload(imported: AddressInput[]) {
+    const rows: Address[] = imported.map((item) => ({
+      ...item,
+      province: null,
+      city: null,
+      district: null,
+      living_area: null,
+      street_type: null,
+      street_name: null,
+      house: null,
+      apartment: null,
+      entrance: null,
+      floor: null,
+      landmark: null,
+      confidence: 0,
+    }));
+    setAddresses((previous) => [...previous, ...rows]);
+  }
+
   return (
     <div>
       <div className="mb-7">
-        <h1 className="text-3xl font-bold text-slate-900">
-          Разбор адресов
-        </h1>
-        <p className="mt-2 text-slate-500">
-          Преобразуйте неструктурированные адреса в структурированные данные
-        </p>
-      </div>
+  <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1.5 text-xs font-semibold text-emerald-700">
+    <MapPin size={14} />
+    Управление доставкой
+  </div>
 
-      <div className="mb-7 grid gap-6 lg:grid-cols-2">
-        <AddressForm onParse={handleInput} />
-        <FileUpload onUpload={handleInput} />
-      </div>
+  <h1 className="text-3xl font-bold text-slate-900">
+    Адреса доставки
+  </h1>
 
-      {pending.length > 0 && (
-        <div className="mb-7 rounded-xl border border-blue-200 bg-blue-50 p-5">
-          <h2 className="font-semibold text-blue-900">
-            Ожидают обработки: {pending.length}
-          </h2>
-          <p className="mt-2 text-sm text-blue-700">
-            Адреса приняты интерфейсом. После подключения FastAPI
-            они будут отправляться на разбор.
-          </p>
-          <div className="mt-3 max-h-32 space-y-1 overflow-y-auto text-sm text-slate-700">
-            {pending.map((address, index) => (
-              <p key={index}>{address}</p>
-            ))}
-          </div>
-          <button
-            onClick={() => setPending([])}
-            className="mt-4 rounded-lg bg-white px-4 py-2 text-sm font-medium text-blue-700"
-          >
-            Очистить очередь
-          </button>
-        </div>
-      )}
+  <p className="mt-2 text-slate-500">
+    Добавляйте адреса получателей, проверяйте
+    данные и уточняйте информацию для доставки.
+  </p>
+</div>
 
       <div className="mb-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <StatCard
           title="Результатов разбора"
           value={addresses.length}
           icon={MapPin}
-          color="bg-blue-100 text-blue-600"
+          color="bg-emerald-100 text-blue-600"
         />
         <StatCard
           title="Высокая уверенность"
@@ -123,6 +114,7 @@ export default function Parser() {
       <AddressTable
         addresses={addresses}
         onUpdate={handleUpdate}
+        onImport={handleFileUpload}
       />
     </div>
   );

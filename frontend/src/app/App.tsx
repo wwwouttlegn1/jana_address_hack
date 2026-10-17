@@ -1,21 +1,68 @@
 
 import { useState } from "react";
+import { Menu, Truck } from "lucide-react";
+
 import Header from "../components/layout/Header";
+import type { Page } from "../components/layout/Header";
 import Parser from "../pages/Parser";
 import Dashboard from "../pages/Dashboard";
-
-type Page = "parser" | "dashboard";
+import Home from "../pages/Home";
+import Delivery from "../pages/Delivery";
 
 export default function App() {
-  const [page, setPage] = useState<Page>("parser");
+  const [page, setPage] = useState<Page>("home");
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  const titles: Record<Page, string> = {
+    home: "Главная",
+    parser: "Адреса доставки",
+    dashboard: "Справочник и аналитика",
+  };
 
   return (
-    <div className="min-h-screen bg-slate-50">
-      <Header currentPage={page} onNavigate={setPage} />
+    <div className="min-h-screen bg-[#F6F8F7]">
+      <Header
+        currentPage={page}
+        onNavigate={setPage}
+        mobileOpen={mobileOpen}
+        onCloseMobile={() => setMobileOpen(false)}
+      />
 
-      <main className="mx-auto max-w-7xl px-6 py-8">
-        {page === "parser" ? <Parser /> : <Dashboard />}
-      </main>
+      <div className="min-h-screen lg:pl-64">
+        <header className="sticky top-0 z-20 flex h-20 items-center justify-between border-b border-slate-200 bg-white px-5 lg:px-9">
+          <div className="flex items-center gap-4">
+            <button
+              onClick={() => setMobileOpen(true)}
+              aria-label="Открыть меню"
+              className="rounded-lg p-2 text-slate-600 hover:bg-slate-100 lg:hidden"
+            >
+              <Menu size={23} />
+            </button>
+
+            <div>
+              <p className="text-xs font-medium text-slate-400">
+                JANA POST / Рабочая панель
+              </p>
+              <h2 className="text-xl font-bold text-slate-900">
+                {titles[page]}
+              </h2>
+            </div>
+          </div>
+
+          <div className="hidden items-center gap-2 rounded-full bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-800 sm:flex">
+            <Truck size={17} />
+            Служба доставки
+          </div>
+        </header>
+
+        <main className="mx-auto max-w-[1500px] p-5 lg:p-9">
+          {page === "home" && <Delivery />}
+
+          {page === "parser" && <Parser />}
+
+          {page === "dashboard" && <Dashboard />}
+        </main>
+      </div>
     </div>
   );
 }

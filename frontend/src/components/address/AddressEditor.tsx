@@ -99,7 +99,7 @@ export default function AddressEditor({
                   onChange={(event) =>
                     updateField(key, event.target.value)
                   }
-                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"
                   placeholder="Не определено"
                 />
               </label>
@@ -116,7 +116,7 @@ export default function AddressEditor({
             </button>
             <button
               type="submit"
-              className="flex items-center gap-2 rounded-xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white hover:bg-blue-700"
+              className="flex items-center gap-2 rounded-xl bg-emerald-600 px-5 py-3 text-sm font-semibold text-white hover:bg-emerald-700"
             >
               <Save size={17} />
               Сохранить изменения

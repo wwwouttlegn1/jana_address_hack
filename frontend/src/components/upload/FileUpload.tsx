@@ -1,10 +1,11 @@
 
 import { useRef } from "react";
 import type { ChangeEvent } from "react";
-import { Upload, FileJson } from "lucide-react";
+import { Upload } from "lucide-react";
+import type { AddressInput } from "../../types/address";
 
 interface FileUploadProps {
-  onUpload: (addresses: string[]) => void;
+  onUpload: (addresses: AddressInput[]) => void;
 }
 
 export default function FileUpload({ onUpload }: FileUploadProps) {
@@ -16,7 +17,7 @@ export default function FileUpload({ onUpload }: FileUploadProps) {
 
     try {
       const content = await file.text();
-      let addresses: string[] = [];
+      let addresses: AddressInput[] = [];
 
       if (file.name.toLowerCase().endsWith(".json")) {
         const data: unknown = JSON.parse(content);
@@ -28,11 +29,18 @@ export default function FileUpload({ onUpload }: FileUploadProps) {
               "addresses" in data &&
               Array.isArray(data.addresses)
             ? data.addresses
-            : [];
+            : typeof data === "object" && data !== null && "raw_address" in data
+              ? [data]
+              : [];
 
         addresses = items
           .map((item: unknown) => {
-            if (typeof item === "string") return item;
+            if (typeof item === "string" && item.trim()) {
+              return {
+                id: `rec_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`,
+                raw_address: item.trim(),
+              };
+            }
 
             if (
               typeof item === "object" &&
@@ -40,12 +48,19 @@ export default function FileUpload({ onUpload }: FileUploadProps) {
               "raw_address" in item &&
               typeof item.raw_address === "string"
             ) {
-              return item.raw_address;
+              return {
+                id: "id" in item && typeof item.id === "string" && item.id.trim()
+                  ? item.id
+                  : `rec_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`,
+                raw_address: item.raw_address,
+              };
             }
 
             return "";
           })
-          .filter(Boolean);
+          .filter((item): item is AddressInput =>
+            typeof item === "object" && item !== null && Boolean(item.raw_address.trim())
+          );
       } else {
         // Упрощённый CSV: один адрес в строке, без сложных кавычек.
         addresses = content
@@ -54,7 +69,8 @@ export default function FileUpload({ onUpload }: FileUploadProps) {
           .filter(Boolean)
           .filter((line, index) =>
             !(index === 0 && /^raw_address$/i.test(line))
-          );
+          )
+          .map((raw_address, index) => ({ id: `rec_${Date.now()}_${index + 1}`, raw_address }));
       }
 
       if (!addresses.length) {
@@ -71,18 +87,7 @@ export default function FileUpload({ onUpload }: FileUploadProps) {
   }
 
   return (
-    <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-      <div className="mb-4 flex items-center gap-2">
-        <Upload className="text-blue-600" size={22} />
-        <h2 className="text-lg font-bold text-slate-900">
-          Загрузка файла
-        </h2>
-      </div>
-
-      <p className="mb-3 text-sm text-slate-500">
-        Загрузите файл с адресами в формате JSON или CSV
-      </p>
-
+    <>
       <input
         ref={fileInputRef}
         type="file"
@@ -92,21 +97,13 @@ export default function FileUpload({ onUpload }: FileUploadProps) {
       />
 
       <button
+        type="button"
         onClick={() => fileInputRef.current?.click()}
-        className="flex h-40 w-full flex-col items-center justify-center rounded-xl border-2 border-dashed border-blue-200 bg-blue-50/50 transition hover:bg-blue-50"
+        className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50"
       >
-        <FileJson size={32} className="mb-3 text-blue-600" />
-        <span className="font-semibold text-blue-700">
-          Нажмите для выбора файла
-        </span>
-        <span className="mt-1 text-xs text-slate-400">
-          JSON или CSV
-        </span>
+        <Upload size={18} />
+        Импорт JSON
       </button>
-
-      <p className="mt-4 text-center text-xs text-slate-400">
-        Файл обрабатывается локально
-      </p>
-    </section>
+    </>
   );
 }

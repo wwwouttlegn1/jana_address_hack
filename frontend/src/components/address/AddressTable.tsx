@@ -1,17 +1,20 @@
 
 import { useState } from "react";
 import { Download, Pencil, Search, AlertTriangle } from "lucide-react";
-import type { Address } from "../../types/address";
+import type { Address, AddressInput } from "../../types/address";
 import AddressEditor from "./AddressEditor";
+import FileUpload from "../upload/FileUpload";
 
 interface Props {
   addresses: Address[];
   onUpdate: (address: Address) => void;
+  onImport: (addresses: AddressInput[]) => void;
 }
 
 export default function AddressTable({
   addresses,
   onUpdate,
+  onImport,
 }: Props) {
   const [search, setSearch] = useState("");
   const [editing, setEditing] = useState<Address | null>(null);
@@ -80,14 +83,17 @@ export default function AddressTable({
             </p>
           </div>
 
-          <button
-            onClick={exportJSON}
-            disabled={addresses.length === 0}
-            className="flex items-center gap-2 rounded-xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50"
-          >
-            <Download size={18} />
-            Экспорт JSON
-          </button>
+          <div className="flex flex-wrap items-center gap-2">
+            <FileUpload onUpload={onImport} />
+            <button
+              onClick={exportJSON}
+              disabled={addresses.length === 0}
+              className="flex items-center gap-2 rounded-xl bg-emerald-600 px-5 py-3 text-sm font-semibold text-white hover:bg-emerald-700 disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              <Download size={18} />
+              Экспорт JSON
+            </button>
+          </div>
         </div>
 
         <div className="p-5">
@@ -103,7 +109,7 @@ export default function AddressTable({
                 setPage(1);
               }}
               placeholder="Поиск по адресам..."
-              className="w-full rounded-xl border border-slate-200 py-3 pl-10 pr-4 text-sm outline-none focus:border-blue-500"
+              className="w-full rounded-xl border border-slate-200 py-3 pl-10 pr-4 text-sm outline-none focus:border-emerald-500"
             />
           </div>
         </div>
@@ -188,7 +194,7 @@ export default function AddressTable({
                         onClick={() => setEditing(address)}
                         title="Исправить адрес"
                         aria-label={`Исправить адрес ${address.id}`}
-                        className="rounded-lg p-2 text-blue-600 hover:bg-blue-50"
+                        className="rounded-lg p-2 text-blue-600 hover:bg-emerald-50"
                       >
                         <Pencil size={18} />
                       </button>

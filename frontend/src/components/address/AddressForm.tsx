@@ -40,13 +40,13 @@ export default function AddressForm({ onParse }: AddressFormProps) {
         placeholder={
           "г. Алматы, ул. Абая, 25, кв. 12\nАстана, проспект Республики, 45"
         }
-        className="h-40 w-full resize-none rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+        className="h-40 w-full resize-none rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"
       />
 
       <button
         onClick={handleSubmit}
         disabled={!input.trim()}
-        className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-blue-600 px-5 py-3 font-semibold text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50"
+        className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-600 px-5 py-3 font-semibold text-white transition hover:bg-emerald-700 disabled:cursor-not-allowed disabled:opacity-50"
       >
         <Search size={18} />
         Разобрать адреса

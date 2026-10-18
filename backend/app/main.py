@@ -6,6 +6,9 @@ from typing import AsyncIterator
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.openapi.docs import get_swagger_ui_html
+from fastapi.staticfiles import StaticFiles
+from swagger_ui_bundle import swagger_ui_path
 
 from app.api.router import api_router
 from app.config import get_settings
@@ -46,9 +49,25 @@ app = FastAPI(
     openapi_tags=OPENAPI_TAGS,
     debug=settings.debug,
     lifespan=lifespan,
-    docs_url="/docs" if settings.environment != "production" else None,
-    redoc_url="/redoc" if settings.environment != "production" else None,
+    docs_url=None,
+    redoc_url=None,
 )
+
+if settings.environment != "production":
+    app.mount(
+        "/swagger-ui",
+        StaticFiles(directory=swagger_ui_path),
+        name="swagger-ui",
+    )
+
+    @app.get("/docs", include_in_schema=False)
+    async def swagger_ui():
+        return get_swagger_ui_html(
+            openapi_url=app.openapi_url,
+            title=f"{settings.app_name} — Swagger UI",
+            swagger_js_url="/swagger-ui/swagger-ui-bundle.js",
+            swagger_css_url="/swagger-ui/swagger-ui.css",
+        )
 
 app.add_middleware(
     CORSMiddleware,

@@ -4,6 +4,63 @@
 поля, которые требуются в задании. Основной разбор полностью локальный — он не
 зависит от внешнего геокодера и не теряет записи, которые не удалось распознать.
 
+## Автономный запуск через Docker
+
+Compose поднимает весь проект локально:
+
+- `frontend` — собранный React-интерфейс под Nginx;
+- `backend` — FastAPI, который перед стартом применяет Alembic-миграции;
+- `db` — PostgreSQL 16 с постоянным Docker-томом;
+- все 210 276 записей справочника автоматически импортируются при первом
+  создании базы.
+
+Перед первым запуском, пока интернет доступен, создайте локальный `.env`,
+укажите в нём `POSTGRES_PASSWORD` и один раз соберите образы:
+
+```powershell
+cd C:\jana_address
+Copy-Item .env.example .env
+# Откройте .env и замените change_me на локальный пароль.
+docker compose build --pull
+docker compose up -d
+```
+
+На подготовленном ноутбуке для последующих запусков без интернета выполните:
+
+```powershell
+cd C:\jana_address
+docker compose up -d --no-build
+docker compose ps
+```
+
+Все три контейнера должны получить статус `healthy`. После запуска доступны:
+
+- интерфейс: `http://localhost:5173`;
+- Swagger с локальными ресурсами, работающий без интернета:
+  `http://localhost:5173/docs`;
+- backend напрямую: `http://localhost:8000`;
+- PostgreSQL для pgAdmin: `localhost:5433`, база `jana_address_db`;
+- пользовательские адреса: `public.address_records`.
+
+Остановить проект без удаления данных:
+
+```powershell
+cd C:\jana_address
+docker compose down
+```
+
+Не добавляйте `--volumes`: эта опция удалит Docker-базу и сохранённые адреса.
+Том `jana-address-postgres-data` переживает обычную остановку контейнеров и
+перезагрузку ноутбука.
+
+Если исходный код изменился и интернет доступен, пересоберите образы:
+
+```powershell
+cd C:\jana_address
+docker compose build --pull
+docker compose up -d
+```
+
 ## Быстрый локальный запуск
 
 В проекте используется созданная локальная PostgreSQL-база `jana_address_db`.

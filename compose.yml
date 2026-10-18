@@ -1,18 +1,49 @@
 name: jana-address
 
 services:
+  db:
+    build:
+      context: .
+      dockerfile: docker/postgres/Dockerfile
+    image: jana-address-db:latest
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-jana_address_db}
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD must be set in .env}
+    ports:
+      - "127.0.0.1:${POSTGRES_PORT:-5433}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - >-
+          pg_isready -U "$${POSTGRES_USER}" -d "$${POSTGRES_DB}" &&
+          test "$$(psql -U "$${POSTGRES_USER}" -d "$${POSTGRES_DB}" -tAc
+          "SELECT count(*) FROM jana_reference.aliases" 2>/dev/null)" = "80955"
+      interval: 5s
+      timeout: 5s
+      retries: 60
+      start_period: 20s
+
   backend:
     build:
       context: ./backend
+    image: jana-address-backend:latest
     restart: unless-stopped
     env_file:
       - .env
     environment:
-      DATABASE_URL: ${DOCKER_DATABASE_URL}
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
+      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB:-jana_address_db}
+      ENVIRONMENT: development
+      GEOCODING_ENABLED: "false"
+      CORS_ORIGINS: http://localhost:${FRONTEND_PORT:-5173},http://127.0.0.1:${FRONTEND_PORT:-5173}
+    depends_on:
+      db:
+        condition: service_healthy
     ports:
-      - "${BACKEND_PORT:-8000}:8000"
+      - "127.0.0.1:${BACKEND_PORT:-8000}:8000"
     command: >-
       sh -c "alembic upgrade head &&
       uvicorn app.main:app --host 0.0.0.0 --port 8000 --proxy-headers"
@@ -20,4 +51,28 @@ services:
       test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/v1/health')"]
       interval: 10s
       timeout: 5s
-      retries: 5
+      retries: 10
+      start_period: 10s
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_URL: /api/v1
+    image: jana-address-frontend:latest
+    restart: unless-stopped
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:${FRONTEND_PORT:-5173}:80"
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://127.0.0.1/"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 5s
+
+volumes:
+  postgres_data:
+    name: jana-address-postgres-data

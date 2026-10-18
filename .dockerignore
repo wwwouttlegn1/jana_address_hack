@@ -1,0 +1,15 @@
+.git
+.gitignore
+.env
+.env.*
+!.env.example
+venv
+.venv
+backend
+frontend
+docs
+data/examples
+data/raw
+*.md
+__pycache__
+*.py[cod]

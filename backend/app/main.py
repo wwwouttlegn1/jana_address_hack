@@ -52,6 +52,9 @@ app = FastAPI(
     docs_url=None,
     redoc_url=None,
 )
+# Локальный swagger-ui-bundle работает с OpenAPI 3.0.x.
+# Это сохраняет Swagger полностью автономным, в том числе без интернета.
+app.openapi_version = "3.0.3"
 
 if settings.environment != "production":
     app.mount(

@@ -118,6 +118,7 @@ async def test_saved_records_can_be_loaded_and_corrected(client) -> None:
 async def test_swagger_contains_only_clear_public_pipeline(client) -> None:
     schema = (await client.get("/openapi.json")).json()
 
+    assert schema["openapi"] == "3.0.3"
     assert set(schema["paths"]) == {
         "/api/v1/parse",
         "/api/v1/parse/batch",
